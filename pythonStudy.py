@@ -159,7 +159,7 @@ def primes():
 
 # 打印1000以内的素数:
 for n in primes():
-    if n < 1000:
+    if n < 10:
         print(n)
     else:
         break
@@ -167,3 +167,20 @@ for n in primes():
 l = 9845234
 l = str(l)
 print(l[::-1])
+
+class Student(object):
+    def __init__(self,name,score):  # 此处需要两个下划线
+        self.name = name
+        self.__score = score
+
+    def printScore(self):
+        print('%s:%s'%(self.name,self.__score))
+    def getScore(self):
+        return self.__score
+    def setScore(self,score):
+        self.__score = score
+
+bart = Student('deffand',99)
+print(bart.getScore())
+bart.setScore(100)
+print(bart.getScore())
